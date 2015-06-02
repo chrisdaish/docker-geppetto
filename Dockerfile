@@ -9,8 +9,8 @@ ENV gid 1000
 
 RUN useradd -m geppetto; \
     apt-get update; \
-    apt-get install -y  unzip \
-			wget; \
+    apt-get install --no-install-recommends -y unzip \
+                                               wget; \
     rm -rf /var/lib/apt/lists/*
 
 RUN wget -q https://downloads.puppetlabs.com/geppetto/4.x/$GEPPETTOPACKAGE -O /tmp/$GEPPETTOPACKAGE; \
