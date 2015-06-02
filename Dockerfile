@@ -13,7 +13,7 @@ RUN useradd -m geppetto; \
                                                wget; \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget -q https://downloads.puppetlabs.com/geppetto/4.x/$GEPPETTOPACKAGE -O /tmp/$GEPPETTOPACKAGE; \
+RUN wget --quiet --no-check-certificate https://downloads.puppetlabs.com/geppetto/4.x/$GEPPETTOPACKAGE -O /tmp/$GEPPETTOPACKAGE; \
     mkdir /home/geppetto/geppetto; \
     unzip /tmp/$GEPPETTOPACKAGE -d /home/geppetto/geppetto; \
     rm -rf /tmp/$GEPPETTOPACKAGE; \
