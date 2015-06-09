@@ -10,13 +10,14 @@ ENV gid 1000
 RUN useradd -m geppetto; \
     apt-get update; \
     apt-get install --no-install-recommends -y unzip \
-                                               wget; \
+                                               wget
+                                               openjdk-7-jre; \
     rm -rf /var/lib/apt/lists/*
 
 RUN wget --quiet --no-check-certificate https://downloads.puppetlabs.com/geppetto/4.x/$GEPPETTOPACKAGE -O /tmp/$GEPPETTOPACKAGE; \
     mkdir /home/geppetto/geppetto; \
-    unzip /tmp/$GEPPETTOPACKAGE -d /home/geppetto/geppetto; \
-    rm -rf /tmp/$GEPPETTOPACKAGE; \
+    unzip /tmp/$GEPPETTOPACKAGE -d /home/geppetto; \
+    rm -rf /tmp/$GEPPETTOPACKAGE
 
 COPY start-geppetto.sh /home/geppetto/
 
