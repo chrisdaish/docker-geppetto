@@ -18,7 +18,8 @@ docker run  -v $HOME/Documents:/home/geppetto/workspace:rw \
             -e uid=$(id -u) \
             -e gid=$(id -g) \
             -e DISPLAY=unix$DISPLAY \
-            --name firefox chrisdaish/geppetto
+            --name geppetto \
+            chrisdaish/geppetto
 ```
 
 FAQ
