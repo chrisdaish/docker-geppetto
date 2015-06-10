@@ -10,7 +10,7 @@ ENV gid 1000
 RUN useradd -m geppetto; \
     apt-get update; \
     apt-get install --no-install-recommends -y unzip \
-                                               wget
+                                               wget \
                                                openjdk-7-jre; \
     rm -rf /var/lib/apt/lists/*
 
